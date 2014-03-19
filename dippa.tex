@@ -102,6 +102,15 @@ linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
 \setlength{\textheight}{23cm}
 
 
+\titleformat{\section}%
+  [hang]% <shape>
+  {\normalfont\bfseries\Large}% <format>
+  {}% <label>
+  {0pt}% <sep>
+  {}% <before code>
+\renewcommand{\thesection}{}% Remove section references...
+\renewcommand{\thesubsection}{\arabic{subsection}}%... from subsections
+
 %% Kaikki mikä paperille tulostuu, on tämän jälkeen
 %%
 %% Output starts here
