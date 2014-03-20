@@ -430,35 +430,34 @@ The information can then be displayed easily on a timeline, which is the default
 As a final prototype that demonstrates core functions of the overall concept, the team decided to implement a teleconferencing system, that can implement speech--to--text conversion on the processed audio and is compatible with analytics to extract useful information. It would need to be possible to implement all the required functionality in the few weeks of time that were left when the concept was finally locked. Even with the short time span, the team wanted to make the system in a way that it might be possible to test it more extensively on various platforms. 
 
 \subsection{Requirements}
-- Practical matters
-- User centered design
+- Practical matters \\
+- User centered design \\
 
 In this case the system needed to demonstrate that multiple users can communicate remotely, as they would with any other system, but so that we can add an unobtrusive layer of analytics on top of the teleconferencing platform. If the users would need to take extra action to enable the analytics or participate in the administration of the system, it would raise the barrier of using the system and have a negative impact on the actual communication that needs to happen. 
 
 
 \subsubsection{Technical limitations}
 
-- Network limitations
-- Bandwidth
-- Latency
-- Platform compatibility
+- Network limitations\\
+- Bandwidth\\
+- Latency\\
+- Platform compatibility\\
 
 The system also needs to be usable by anyone participating in the project, without the need to learn new comlicated programs or a need to install proprietary software. Support for Linux, OS X and Windows should be implemented, so that the system would work regardless of the platform that the participating organization is using. The system should not suffer from losing connection to the Internet, meaning that local functions should stay available even in the event that the outside network is not reachable. The local services still provide recording and storage capabilities that can be synchronized with outside systems once connectivity has been returned.
 
 
 \subsubsection{Other limitations}
 
-- Time to prototype
-- Resources
-- Programmers
+- Time to prototype\\
+- Resources\\
+- Programmers\\
 
 Other practical limitations to implementing the prototype, also had a significant impact on the features of the final prototype. When the scope and features of the prototype were decided, there was about one month left to build the server and program the needed components. This meant that the solution needed to be relatively easy to implement and that it would make sense to build it gradually, building features on top of each other. Other material also needed to be produced at the same time to be able to present everything in the final event. Since there was only one member in the team with experience and the required knowledge in programming, it limited the available options for task division. There was also a possibility to use the course prototyping budget to hire programming help, but the team was not able to locate sufficiently skilled programmers in such short time, so everything was produced by the team members.
 
 \subsubsection{Selected client--side software}
 
-(Chrome, HTML5, javascript)
-- The team selected to use an experimental open API in a popular web browser, as the basis for the teleconferencing application, because that would make it possible to test the end result on several platforms. Building the application for a browser also meant that they could rely on the APIs offered by the browser and that the visual User Interface (UI) would be easy to integrate into the final application and that the UI could be developed separately.
-- HTML5 offers advanced media capabilities, natively supporting audio and video tags, that make it possible to easily embed media content onto web pages. As the prototype makes heavy use of recorded audio and socket based communication, it was logical to choose a frontend that readily supports media content.
+- The team selected to use an experimental open API in a popular web browser, as the basis for the teleconferencing application, because that would make it possible to test the end result on several platforms. Building the application for a browser also meant that they could rely on the APIs offered by the browser and that the visual User Interface (UI) would be easy to integrate into the final application and that the UI could be developed separately. \\
+- HTML5 offers advanced media capabilities, natively supporting audio and video tags, that make it possible to easily embed media content onto web pages. As the prototype makes heavy use of recorded audio and socket based communication, it was logical to choose a frontend that readily supports media content. \\
 - Javascript is a prototype based scripting language, that is easy to understand and more likely usable by the teams limited amount of programmers because of its use as the client--side scripting language on the world wide web. Javasript supports object-oriented, imperative and functional programming styles and lends some of its syntax from C.
 
 
@@ -472,14 +471,13 @@ In order for the client applications to communicate with each other and update t
 
 \subsection{WebRTC}
 
-WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plugins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection \cite{Jennings}
+WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plugins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection. \cite{Jennings}
 
-The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. 
-\cite{Jennings}
+The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. \cite{Jennings}
 
 \subsubsection{WebRTC Architecture}
 
-(insert graph of WebRTC architecture, illustrating the communication between the server and the peers, before and after communication is established between peers)
+(insert graph of WebRTC architecture, illustrating the communication between the server and the peers, before and after communication is established between peers)\\
 
 The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more sychronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} 
 
@@ -498,7 +496,7 @@ The conclusion will heavily depend on the yet to be read scientific publications
 
 The development of advanced media capabilities into web browsers has made it possible for developers to rapidly develop interactive real--time applications. In the related CBI project, the WebRTC platform was chosen because of its versatility, easy to implement API and compatiblility with multiple platforms, including browsers for mobile devices. It enabled the prototype to be tested in many environments and eventually would help in the adoption of the final system, because the system does not require the installation of any additional software by the user.
 
-The system includes bandwidth management and supports common codecs. 
+The system includes bandwidth management and supports common codecs, which makes it possible for the team to concentrate on the relevant features, instead of having to implement every functionality completely.
 
 \clearpage
 
@@ -520,6 +518,11 @@ The system includes bandwidth management and supports common codecs.
 
 \bibitem{} \textit{}
 
+\bibitem{} \textit{}
+
+\bibitem{} \textit{}
+
+\bibitem{} \textit{}
 
 \end{thebibliography}
 
