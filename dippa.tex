@@ -459,7 +459,7 @@ Other practical limitations to implementing the prototype, also had a significan
 (Chrome, HTML5, javascript)
 - The team selected to use an experimental open API in a popular web browser, as the basis for the teleconferencing application, because that would make it possible to test the end result on several platforms. Building the application for a browser also meant that they could rely on the APIs offered by the browser and that the visual User Interface (UI) would be easy to integrate into the final application and that the UI could be developed separately.
 - HTML5 offers advanced media capabilities, natively supporting audio and video tags, that make it possible to easily embed media content onto web pages. As the prototype makes heavy use of recorded audio and socket based communication, it was logical to choose a frontend that readily supports media content.
-- Javascript is a prototype based scripting language, that is easy to understand and more likely usable by the teams limited amount of programmers because of its use as the client--side scripting language on the world wide web.
+- Javascript is a prototype based scripting language, that is easy to understand and more likely usable by the teams limited amount of programmers because of its use as the client--side scripting language on the world wide web. Javasript supports object-oriented, imperative and functional programming styles and lends some of its syntax from C.
 
 
 \subsubsection{Selected server--side software}
@@ -484,6 +484,10 @@ The standard will define mandatory codecs to guarantee compatibility for audio a
 The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more sychronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} 
 
 The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. Conferences or media streaming in a one to many --topology can be achieved by using a media processing node that handle the mixing of media between RTCPeerConnections. \cite{Jennings} In this prototype setting the media mixing server was not required for the proof of concept phase, but remains available for implementation if the systems is ever developed further.
+
+\subsubsection{WebRTC Data transfer}
+
+Media streames in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP).
 
 \clearpage
 
