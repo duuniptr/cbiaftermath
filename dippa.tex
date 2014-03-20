@@ -474,7 +474,7 @@ In order for the client applications to communicate with each other and update t
 
 WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plugins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection \cite{Jennings}
 
-The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and V8 and H.264 for video. It is 
+The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. 
 \cite{Jennings}
 
 \subsubsection{WebRTC Architecture}
@@ -487,7 +487,7 @@ The peer-to-peer nature of WebRTC means that a separate connection is created fo
 
 \subsubsection{WebRTC Data transfer}
 
-Media streames in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. \cite{Jennings}
+Media streames in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings}
 
 \clearpage
 
