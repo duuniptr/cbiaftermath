@@ -414,20 +414,38 @@ As a final prototype that demonstrates core functions of the overall concept, th
 \subsection{Requirements}
 - Practical matters
 - User centered design
+In this case the system needed to demonstrate that multiple users can communicate remotely, as they would with any other system, but so that we can add an unobtrusive layer of analytics on top of the teleconferencing platform. If the users would need to take extra action to enable the analytics or participate in the administration of the system, it would raise the barrier of using the system and have a negative impact on the actual communication that needs to happen. 
+
 
 \subsubsection{Technical limitations}
-- Network
+
+- Network limitations
+- Bandwidth
+- Latency
 - Platform compatibility
+
+The system also needs to be usable by anyone participating in the project, without the need to learn new comlicated programs or a need to install proprietary software. Support for Linux, OS X and Windows should be implemented, so that the system would work regardless of the platform that the participating organization is using. The system should not suffer from losing connection to the Internet, meaning that local functions should stay available even in the event that the outside network is not reachable. The local services still provide recording and storage capabilities that can be synchronized with outside systems once connectivity has been returned.
+
 
 \subsubsection{Other limitations}
 - Time to prototype
 - Resources
+- Programmers
+Other practical limitations to implementing the prototype, also had a significant impact on the features of the final prototype. 
 
-
-\subsubsection{Selected frontend software}
+\subsubsection{Selected client--side software}
 (Chrome, HTML5, javascript)
+- The team selected to use an experimental open API in a popular web browser, as the basis for the teleconferencing application. 
+- HTML5 offers advanced media capabilities, natively supporting audio and video tags, that make it possible to easily embed media content onto web pages.
+- Javascript is a prototype based scripting language, that is easy to understand and more likely usable by the teams limited amount of programmers because of its use as the client--side scripting language on the world wide web.
 
-\subsubsection{Selected backend software}
+
+\subsubsection{Selected server--side software}
+
+As most of the main features were implemented in the client--side, the server--side software just needed to be simple to operate and powerful enough to serve all the content required by the system. An HTTP server is required to provide static content to the user and act as the application provider. The application provider in this context is the server that hosts the client application that is server to the users browser. The server is the initial point of contact between the peers that are connecting to the system. Nginx was selected as the HTTP server software for this projects purposes.
+
+In order for the client applications to communicate with each other and update the dynamically added content to the users screen, a server--side scripting 
+
 (nginx, nodeJS..)
 
 \subsection{WebRTC}
