@@ -443,7 +443,7 @@ In this case the system needed to demonstrate that multiple users can communicat
 - Latency\\
 - Platform compatibility\\
 
-The system also needs to be usable by anyone participating in the project, without the need to learn new comlicated programs or a need to install proprietary software. Support for Linux, OS X and Windows should be implemented, so that the system would work regardless of the platform that the participating organization is using. The system should not suffer from losing connection to the Internet, meaning that local functions should stay available even in the event that the outside network is not reachable. The local services still provide recording and storage capabilities that can be synchronized with outside systems once connectivity has been returned.
+The system also needs to be usable by anyone participating in the project, without the need to learn new complicated programs or a need to install proprietary software. Support for Linux, OS X and Windows should be implemented, so that the system would work regardless of the platform that the participating organization is using. The system should not suffer from losing connection to the Internet, meaning that local functions should stay available even in the event that the outside network is not reachable. The local services still provide recording and storage capabilities that can be synchronized with outside systems once connectivity has been returned.
 
 
 \subsubsection{Other limitations}
@@ -471,7 +471,7 @@ In order for the client applications to communicate with each other and update t
 
 \subsection{WebRTC}
 
-WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plugins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection. \cite{Jennings}
+WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plug--ins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection. \cite{Jennings}
 
 The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. \cite{Jennings}
 
@@ -479,13 +479,13 @@ The standard will define mandatory codecs to guarantee compatibility for audio a
 
 (insert graph of WebRTC architecture, illustrating the communication between the server and the peers, before and after communication is established between peers)\\
 
-The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more sychronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} 
+The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more synchronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} 
 
 The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. Conferences or media streaming in a one to many --topology can be achieved by using a media processing node that handle the mixing of media between RTCPeerConnections. \cite{Jennings} In this prototype setting the media mixing server was not required for the proof of concept phase, but remains available for implementation if the systems is ever developed further.
 
 \subsubsection{WebRTC Data transfer}
 
-Media streames in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings}
+Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings}
 
 \clearpage
 
@@ -494,7 +494,7 @@ Media streames in WebRTC use the Real-Time Transport Protocol (RTP), to transfer
 
 The conclusion will heavily depend on the yet to be read scientific publications.
 
-The development of advanced media capabilities into web browsers has made it possible for developers to rapidly develop interactive real--time applications. In the related CBI project, the WebRTC platform was chosen because of its versatility, easy to implement API and compatiblility with multiple platforms, including browsers for mobile devices. It enabled the prototype to be tested in many environments and eventually would help in the adoption of the final system, because the system does not require the installation of any additional software by the user.
+The development of advanced media capabilities into web browsers has made it possible for developers to rapidly develop interactive real--time applications. In the related CBI project, the WebRTC platform was chosen because of its versatility, easy to implement API and compatibilility with multiple platforms, including browsers for mobile devices. It enabled the prototype to be tested in many environments and eventually would help in the adoption of the final system, because the system does not require the installation of any additional software by the user.
 
 The system includes bandwidth management and supports common codecs, which makes it possible for the team to concentrate on the relevant features, instead of having to implement every functionality completely.
 
