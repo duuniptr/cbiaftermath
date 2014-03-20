@@ -442,21 +442,26 @@ Other practical limitations to implementing the prototype, also had a significan
 
 \subsubsection{Selected server--side software}
 
-As most of the main features were implemented in the client--side, the server--side software just needed to be simple to operate and powerful enough to serve all the content required by the system. An HTTP server is required to provide static content to the user and act as the application provider. The application provider in this context is the server that hosts the client application that is server to the users browser. The server is the initial point of contact between the peers that are connecting to the system. Nginx was selected as the HTTP server software for this projects purposes.
+As most of the main features were implemented in the client--side, the server--side software just needed to be simple to operate and powerful enough to serve all the content required by the system. An HTTP server is required to provide static content to the user and act as the application provider. The application provider in this context is the server that hosts the client application that is server to the users browser. The server is the initial point of contact between the peers that are connecting to the system. Nginx was selected as the HTTP server software for this projects purposes. Nginx is an HTTP server and forwarding proxy programmed by Igor Sysoev (\url{http://nginx.org}).
 
-In order for the client applications to communicate with each other and update the dynamically added content to the users screen, a server--side scripting 
+In order for the client applications to communicate with each other and update the dynamically added content to the users screen, a server--side scripting platform was needed to handle the messages and provide the necessary sockets for communicating. NodeJS (\url{http://nodejs.org}) is a Javascript based server--side platform that enables the building of highly scalable and distributed applications. NodeJS is memory efficient under high load and runs on a very small footprint, which in this case was important because the prototype would be run locally on cheap hardware. The platform is also built in a way that very few function calls block, so that most systems will respond fast, which reduces the latency in a messaging system.
 
-(nginx, nodeJS..)
+
 
 \subsection{WebRTC}
-WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plugins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. \cite{Jennings}
+
+WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plugins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection \cite{Jennings}
+
+The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and V8 and H.264 for video. It is 
+\cite{Jennings}
 
 \subsubsection{WebRTC Architecture}
-(insert graph of WebRTC architecture)
+
+(insert graph of WebRTC architecture, illustrating the communication between the server and the peers, before and after communication is established between peers)
 
 The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more sychronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} 
 
-The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. 
+The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. Conferences or media streaming in a one to many --topology can be achieved by using a media processing node that handle the mixing of media between RTCPeerConnections. \cite{Jennings} In this prototype setting the media mixing server was not required for the proof of concept phase, but remains available for implementation if the systems is ever developed further.
 
 \clearpage
 
