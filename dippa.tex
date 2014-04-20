@@ -456,11 +456,9 @@ Shadowing TALENT members and the discussions with the researchers helped the tea
 
 %%% Perusteita
 
-The final concept prof the CBI project inherited many qualities from the intermediate prototypes that we had made during the explorative phase of the project. From concepts of holographic displays and descriptive visualizations, we took the elements of futuristic visualizations. From the Greek concept of the learning fountain, which was a fountain like element designed to enable people to consume information, we took some industrial design aspects and the idea of having a central hub. The concept contains some physical elements that are designed to naturally convey information and help the users on remote interactions beyond audio and video. A large touchscreen table could be used as a hub element in the concept to aid in manipulating structured data and help the users share conceptual creations through drawing on the surface or scanning in their meeting notes. These features were selected and tailored to answer the discovered needs of the users.
+The final concept of the CBI project inherited many qualities from the intermediate prototypes produced during the prototyping iterations of the process. From concepts of holographic displays and descriptive visualizations, came the the elements of futuristic visualizations. A visual way of consuming data brings the user interface closer to the natural interactions people are used to performing \cite{Underkoffler} \cite{Shaer}. From the Greek concept of the learning fountain, which was a fountain like element designed to enable people to consume information, some industrial design aspects and the idea of having a central hub became a central thing in the final concept. The concept contains some physical elements that are designed to naturally convey information and help the users on remote interactions beyond audio and video. A large touch surface could be used as a hub element in the concept to aid in manipulating structured data and help the users share conceptual creations by drawing on the surface or by scanning their meeting notes. These features were selected and tailored to answer the discovered needs of the users.
 
-The final concept is a system to aid in project management and information handling. The system would aggregate project related meta level information, files and produced data such as audio recordings, and provide an interface to intuitively browse and search the accumulated data. By providing a system for presentations, teleconferencing and remote communication, the system can gather meta data and create a relational graph by analyzing the data. Keywords and topics can be extracted from presentation files and mined from material created by speech--to--text algorithms. User accounts carry information of organizations, projects and professional skills related to the user, which can then be associated to their actions and to meetings they participate attend.
-
-The information can then be displayed easily on a timeline, which is the default view for the system. Displaying the information as a connected graph instead of a timeline, allows the user filter the information according to the type of connections, thus allowing the user to find information by its qualities, instead of literal text content. The semantic search can be implemented by using Natural Language Processing (NLP) algorithms to extract named entities, such as dates, places, names or locations.
+The final concept is a system to aid in project management and information handling. The system can aggregate project related information, files and produced data such as audio recordings, and provide an interface to intuitively browse and search the accumulated data. By providing a system for presentations, teleconferencing and remote communication, the system can gather meta data and create a relational graph by analyzing the data. Keywords and topics can be extracted from presentation files and mined from material created by speech--to--text algorithms. User accounts carry information of organizations, projects and professional skills related to the user, which can then be associated to their actions and to meetings they participate attend. The information can then be displayed easily on a timeline, which is the default view for the system. Displaying the information as a connected graph instead of a timeline, allows the user filter the information according to the type of connections, thus allowing the user to find information by its qualities, instead of literal text content. The semantic search can be implemented by using Natural Language Processing (NLP) algorithms to extract named entities, such as dates, places, names or locations.
 
 %%% Rakenne yhdenmukaiseksi
 
@@ -477,13 +475,11 @@ For the final prototype, an online meeting room was created where users could op
 The application monitors the users microphone for changes in volume levels, in order to determine whether the user is speaking or if the the volume is at background noise levels. A rising signal triggers the application to record audio, until a set amount of silence is detected after the event. This system enables the recording of speech while ignoring longer periods of silence. The live audio is transmitted to all the peers in the virtual conference room regardless of recording status. The recordings are tagged with the active users meta information and a slot in the meeting audio record is reserved for the audio file at the time allocated by the server. The time allocation is triggered by the function that begins the recording process. This notifies all users in the meeting who is speaking next and makes it possible for them to use the system to add meta data to the sound clip based on what it will contain. When the user stops speaking, the recording ends and a file is transfered to the server for analysis. The server transcodes the audio to a more compressed format and also sends a copy to be converted into text by another service. When the text is returned, each users screen is updated with a link to the sound file and the text contents derived from the audio are posted below the embedded audio. At this point it would also be possible to use a framework like the Stanford Natural Language Processing (NLP) suite to analyze the text content for items to add to the meta data. Stanfords Core NLP suite was installed and tested on the server, the team was able to use the NLP tools to extract named entities from the text and produce summaries of larger bodies of text data.
 
 \subsection{Requirements}
-- Practical matters \\
-- User centered design \\
 
 In this case the system needed to demonstrate that multiple users can communicate remotely, as they would with any other system, but so that we can add an unobtrusive layer of analytics on top of the teleconferencing platform. If the users would need to take extra action to enable the analytics or participate in the administration of the system, it would raise the barrier of using the system and have a negative impact on the actual communication that needs to happen. 
 %%Hyvä
 
-\subsubsection{Technical limitations}
+\subsection{Limitations}
 
 - Network limitations\\
 - Bandwidth\\
@@ -492,23 +488,16 @@ In this case the system needed to demonstrate that multiple users can communicat
 
 The system also needs to be usable by anyone participating in the project, without the need to learn new complicated programs or a need to install proprietary software. Support for Linux, OS X and Windows should be implemented, so that the system would work regardless of the platform that the participating organization is using. The system should not suffer from losing connection to the Internet, meaning that local functions should stay available even in the event that the outside network is not reachable. The local services still provide recording and storage capabilities that can be synchronized with outside systems once connectivity has been returned.
 
-
-\subsubsection{Other limitations}
-
-- Time to prototype\\
-- Resources\\
-- Programmers\\
-
 Other practical limitations to implementing the prototype, also had a significant impact on the features of the final prototype. When the scope and features of the prototype were decided, there was about one month left to build the server and program the needed components. This meant that the solution needed to be relatively easy to implement and that it would make sense to build it gradually, building features on top of each other. Other material also needed to be produced at the same time to be able to present everything in the final event. Since there was only one member in the team with experience and the required knowledge in programming, it limited the available options for task division. There was also a possibility to use the course prototyping budget to hire programming help, but the team was not able to locate sufficiently skilled programmers in such short time, so everything was produced by the team members.
 
-\subsubsection{Selected client--side software}
+\subsection{Selected client--side software}
 
 - The team selected to use an experimental open API in a popular web browser, as the basis for the teleconferencing application, because that would make it possible to test the end result on several platforms. Building the application for a browser also meant that they could rely on the APIs offered by the browser and that the visual User Interface (UI) would be easy to integrate into the final application and that the UI could be developed separately. \\
 - HTML5 offers advanced media capabilities, natively supporting audio and video tags, that make it possible to easily embed media content onto web pages. As the prototype makes heavy use of recorded audio and socket based communication, it was logical to choose a frontend that readily supports media content. \\
 - Javascript is a prototype based scripting language, that is easy to understand and more likely usable by the teams limited amount of programmers because of its use as the client--side scripting language on the world wide web. Javasript supports object-oriented, imperative and functional programming styles and lends some of its syntax from C.
 
 
-\subsubsection{Selected server--side software}
+\subsection{Selected server--side software}
 
 As most of the main features were implemented in the client--side, the server--side software just needed to be simple to operate and powerful enough to serve all the content required by the system. An HTTP server is required to provide static content to the user and act as the application provider. The application provider in this context is the server that hosts the client application that is server to the users browser. The server is the initial point of contact between the peers that are connecting to the system. Nginx was selected as the HTTP server software for this projects purposes. Nginx is an HTTP server and forwarding proxy programmed by Igor Sysoev (\url{http://nginx.org}).
 
@@ -516,7 +505,7 @@ In order for the client applications to communicate with each other and update t
 
 
 
-\subsection{Real Time Communication infrastructure}
+\section{Real Time Communication infrastructure}
 %%% Kerro otsikoilla aiheesta, oleta että lukija ei tiedä mitään
 %%% Valmistele lopputulosta
 
@@ -560,6 +549,10 @@ The system includes bandwidth management and supports common codecs, which makes
 \bibitem{Brown} Brown,\ T. (2008). \textit{Design thinking.} Harvard business review, 86(6), 84.
 
 \bibitem{Patnaik} Patnaik,\ D., & Becker,\ R. (1999). \textit{Needfinding: the why and how of uncovering people's needs.} Design Management Journal (Former Series), 10(2), 37-43.
+
+\bibitem{Underkoffler} Underkoffler, J. (1997). \textit{A view from the Luminous Room.} Personal Technologies, 1(2), 49-59.
+
+\bibitem{Shaer} Shaer, O., & Hornecker, E. (2010). \textit{Tangible user interfaces: past, present, and future directions.} Foundations and Trends in Human-Computer Interaction, 3(1–2), 1-137.
 
 \bibitem{Jennings} Jennings,\ C., Hardie,\ T., Westerlund, M. (2013) \textit{Real-time communications for the web} Communications Magazine, IEEE Vol. 51, Iss. 4, pp. 20-26. %%ISSN: 0163-6804
 
