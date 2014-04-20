@@ -429,9 +429,22 @@ Research by Clavert and Laakso \cite{Clavert} shows, that as engineering problem
 
 \begin{figure}
 \begin{verbatim}
- +-----------------+    +-----------------+    +-----------------+    +-----------------+    +-----------------+
- |  Empathize       >   |  Define          >   |  Ideate          >   |  Prototype       >   |  Test            > ...
- +-----------------+    +-----------------+    +-----------------+    +-----------------+    +-----------------+
+ 
+ +--------------+
+ |  Empathize   |-+
+ +--------------+ |
+            +--------------+
+            |  Define      |-+
+            +--------------+ |
+                    +--------------+
+                    |  Ideate      |-+
+                    +--------------+ |
+                            +--------------+
+                            |  Prototype   |-+
+                            +--------------+ |
+                                    +--------------+
+                                    |  Test        |-> Iterate...
+                                    +--------------+
 \end{verbatim}
 \caption{Design Thinking Process}
 \label{fig:dt-process}
