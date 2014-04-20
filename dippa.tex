@@ -535,7 +535,23 @@ Basic features of WebRTC already have decent support on popular platforms. The s
 
 \subsubsection{WebRTC Architecture}
 
-(insert graph of WebRTC architecture, illustrating the communication between the server and the peers, before and after communication is established between peers)\\
+\begin{figure}
+\begin{verbatim}
+
+    Initiating                  RTCPeerConnection
+    peer connection             established
+          ______            |
+        / Server \          |
+        \________/          |
+        /       \           |
+ +------+       +------+    |    +------+     +------+
+ | Peer |       | Peer |    |    | Peer |-----| Peer |
+ +------+       +------+    |    +------+     +------+
+                            |
+\end{verbatim}
+\caption{Establishing RTCPeerConnection}
+\label{fig:peer-connection}
+\end{figure}
 
 The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more synchronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} \cite{Garaizar}
 
