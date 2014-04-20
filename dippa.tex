@@ -423,7 +423,15 @@ The final problem definition and type of solution was left for the student team 
 
 Research by Clavert and Laakso \cite{Clavert} shows, that as engineering problems are getting more complex, a more design oriented view of the problem field than traditionally held is useful for the modern engineering student. By having students solve problems in a project oriented fashion, they have a more useful and natural setting in which to expand their knowledge of both science and design. An interdisciplinary set of skills will help better prepare the students to work with people from other fields and by giving contrast -- deepen their understanding of their own professional skills. Design Based Learning (DBL) puts the students at the center of action and enables them to immerse them selves into the subject at hand. This approach affects the role of the teacher as well as the student, by giving the students more autonomy regarding their methods and making the lecturer more into a facilitator and guide for the student group.
 
-(insert graph of dt process)
+\begin{figure}
+\begin{verbatim}
+ +-----------------+    +-----------------+    +-----------------+    +-----------------+    +-----------------+
+ |  Empathize       >   |  Define          >   |  Ideate          >   |  Prototype       >   |  Test            > ...
+ +-----------------+    +-----------------+    +-----------------+    +-----------------+    +-----------------+
+\end{verbatim}
+\caption{Design Thinking Process}
+\label{fig:dt-process}
+\end{figure}
 
 The design thinking process referred to by Clavert & Laakso \cite{Clavert} and by Brown \cite{Brown} is an iterative process that usually has the following steps in some form. It begins with empathy, more specifically understanding the needs of the user. This enables the group to form an understanding of the goals of the user and helps them in refining the problem. Next comes the problem definition, where the knowledge of the users needs is combined with the goals of the project to produce a more clear definition for the project task. This enables the group to go forward in the process to the ideation phase. During this phase a diverse set of ideas that address the problem definition are created. One or more of the ideas produced are then taken to the next level, by refining them and building a practical prototype of the solution. The prototype can be a physical product or an immaterial production that can be used in order to learn new information that would help solve the problem. Testing the prototype is the final phase and it usually includes engaging the end users and learning from their interactions with the prototype. \cite{Clavert} \cite{Brown} The process can be repeated to produce a cycle of divergent and convergent thinking that should ultimately bring the group closer to an implementable solution to their redefined problem.
 
@@ -490,12 +498,9 @@ The system also needs to be usable by anyone participating in the project, witho
 
 Other practical limitations of the implementation also had a significant impact on the features of the final prototype. When the scope and features of the prototype were decided, there was about one month left to build the server and program the needed components. This meant that the solution needed to be relatively easy to implement and that it would make sense to build it gradually, building features on top of each other. Other material also needed to be produced at the same time to be able to present everything in the final event. There was also an opportunity to use the course prototyping budget, which was limited but sufficient for a smaller scale proof of concept prototype.
 
-\subsection{Selected client--side software}
+\subsection{Selected software components for client and server side services}
 
 The team selected to use an experimental open API in a popular web browser, as the basis for the teleconferencing application, because that would make it possible to test the end result on several platforms. Building the application for a browser also meant that they could rely on the APIs offered by the browser and that the visual User Interface (UI) would be easy to integrate into the final application and that the UI could be developed separately. HTML5 offers advanced media capabilities, natively supporting audio and video tags, that make it possible to easily embed media content onto web pages \cite{Meyn}. As the prototype makes heavy use of recorded audio and socket based communication, it was logical to choose a frontend that readily supports media content. JavaScript is a prototype based scripting language, that is easy to understand and more likely usable by the teams limited amount of programmers because of its use as the client--side scripting language on the world wide web. JavaScript is used to interface with the APIs in question.
-
-
-\subsection{Selected server--side software}
 
 As most of the main features were implemented in the client--side, the server--side software just needed to be simple to operate and powerful enough to serve all the content required by the system. An HTTP server is required to provide static content to the user and act as the application provider. The application provider in this context is the server that hosts the client application that is server to the users browser. The server is the initial point of contact between the peers that are connecting to the system. Nginx was selected as the HTTP server software for this projects purposes. Nginx is an HTTP server and forwarding proxy programmed by Igor Sysoev (\url{http://nginx.org}).
 
@@ -507,9 +512,9 @@ In order for the client applications to communicate with each other and update t
 %%% Kerro otsikoilla aiheesta, oleta että lukija ei tiedä mitään
 %%% Valmistele lopputulosta
 
-WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plug--ins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. This enables users to communicate in real time by using only their web browsers and installed media capabilities. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection connects data streams between the users browsers, thus allowing the transfer of audio, video and generic data. \cite{Jennings}
+WebRTC stands for Web Real Time Communication and it is a set of open standards being defined by the Internet Engineering Task Force (IETF) and the World Wide Web consortium (W3C). It is being developed to provide a set of standard application programming interfaces (API) to replace the currently used proprietary protocols and plug--ins. The core components of WebRTC are peer--to--peer audio and video streaming and a multiplexing peer--to--peer data transfer channel. This enables users to communicate in real time by using only their web browsers and installed media capabilities. The web server hosting the application, will relay the communication between the peers until they have established a direct channel using the RTCPeerConnection API call. The RTCPeerConnection connects data streams between the users browsers, thus allowing the transfer of audio, video and generic data. \cite{Jennings} The integrated nature of WebRTC and its use of common web based programming elements makes it a reasonably fast platform to develop web based interactive services.
 
-The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. \cite{Jennings} For now the user is notified and has to allow access to audio and video streams before they can be used, the same restriction does not apply to generic data connections \cite{Johnston}.
+Basic features of WebRTC already have decent support on popular platforms. The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are also free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. \cite{Jennings} For now the user is notified and has to allow access to audio and video streams before they can be used, the same restriction does not apply to generic data connections \cite{Johnston}. Using WebRTC to develop an online service releases the developer from the need to work directly with encoding media and other low level work. Instead developers will be free to concentrate on the functionality and features that add value to their service, while the lower level functions are controlled through the API when needed.
 
 \subsubsection{WebRTC Architecture}
 
@@ -523,9 +528,11 @@ The peer-to-peer nature of WebRTC means that a separate connection is created fo
 
 \subsubsection{WebRTC Data transfer}
 
-Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings} \cite{Johnston}
+Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings} \cite{Johnston} \cite{Frederick} RTP is also interesting because it supports multicasting \cite{Frederick}. The RTP stream could be realyed and broadcast to a larger audience by using a media processing node. Using the node would only add a single user to the conference, it would allow a larger audience to consume the stream without requiring massive mounts of bandwidth.
 
-WebRTC can also handle pure Session Initiation Protocol (SIP) based data transfer over WebSocket and as JavaScript Object Notation (JSON) over XMLHttpRequest (XHR). Of those two options, JSON over XHR uses less bandwidth. \cite{Adeyeye} 
+WebRTC can also handle pure Session Initiation Protocol (SIP) based data transfer over WebSocket, and as JavaScript Object Notation (JSON) over XMLHttpRequest (XHR). Of those two options, JSON over XHR uses less bandwidth. \cite{Adeyeye}
+
+
 
 
 \clearpage
@@ -568,9 +575,12 @@ The system includes bandwidth management and supports common codecs, which makes
 
 \bibitem{Rosenberg} Rosenberg, J. (2010). \textit{Interactive connectivity establishment (ICE): A protocol for network address translator (NAT) traversal for offer/answer protocols.} RFC 5245, April. ietf.org
 
-%%%% 
+\bibitem{Frederick} Frederick, R., Jacobson, V., & Design, P. (2003). \textit{RTP: A transport protocol for real-time applications.} IETF RFC3550. ietf.org
 
 \bibitem{Adeyeye} Adeyeye, M., Makitla, I., & Fogwill, T. \textit{WebRTC using JSON via XMLHttpRequest and SIP over WebSocket: Initial Signalling Overhead Findings.} Cape Peninsula University of Technology, Cape Town, South Africa
+
+%%%% 
+
 
 \bibitem{Adeyeye} Adeyeye,\ M., Makitla,\ I., Fogwill,\ T. (2013) \textit{Determining the signalling overhead of two common WebRTC methods: JSON via XMLHttpRequest and SIP over WebSocket} IEEE 2013
 
