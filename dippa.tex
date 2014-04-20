@@ -523,7 +523,10 @@ The peer-to-peer nature of WebRTC means that a separate connection is created fo
 
 \subsubsection{WebRTC Data transfer}
 
-Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings}
+Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings} \cite{Johnston}
+
+WebRTC can also handle pure Session Initiation Protocol (SIP) based data transfer over WebSocket and as JavaScript Object Notation (JSON) over XMLHttpRequest (XHR). Of those two options, JSON over XHR uses less bandwidth. \cite{Adeyeye} 
+
 
 \clearpage
 
@@ -563,10 +566,11 @@ The system includes bandwidth management and supports common codecs, which makes
 
 \bibitem{Garaizar} Garaizar,\ P., Vadillo,\ M.\ A., Lopez-de-Ipina,\ D. (2012) \textit{Benefits and pitfalls of using HTML5 APIs for online experiments and simulations} Remote Engineering and Virtual Instrumentation (REV), 2012 9th International Conference on pp. 1-7. %%ISBN: 978-1-4673-2540-0
 
-\bibitem{Rosenberg} Rosenberg, J. (2010). Interactive connectivity establishment (ICE): A protocol for network address translator (NAT) traversal for offer/answer protocols. RFC 5245, April.
+\bibitem{Rosenberg} Rosenberg, J. (2010). \textit{Interactive connectivity establishment (ICE): A protocol for network address translator (NAT) traversal for offer/answer protocols.} RFC 5245, April. ietf.org
 
 %%%% 
 
+\bibitem{Adeyeye} Adeyeye, M., Makitla, I., & Fogwill, T. \textit{WebRTC using JSON via XMLHttpRequest and SIP over WebSocket: Initial Signalling Overhead Findings.} Cape Peninsula University of Technology, Cape Town, South Africa
 
 \bibitem{Adeyeye} Adeyeye,\ M., Makitla,\ I., Fogwill,\ T. (2013) \textit{Determining the signalling overhead of two common WebRTC methods: JSON via XMLHttpRequest and SIP over WebSocket} IEEE 2013
 
