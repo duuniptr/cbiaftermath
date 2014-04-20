@@ -515,11 +515,11 @@ The standard will define mandatory codecs to guarantee compatibility for audio a
 
 (insert graph of WebRTC architecture, illustrating the communication between the server and the peers, before and after communication is established between peers)\\
 
-The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more synchronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings}
+The above graph illustrates the architecture of a WebRTC based system, where an application provider serves a Javascript application to each peer. The application uses the common WebRTC API that is built into the client (e.g. browser). The application is then able to request access to the local microphone or video feed, using the GetUserMedia API call, which produces one or more synchronized streams, according to what is requested. The peers are then able to call for an RTCPeerConnection and add their local media stream to it. Each call to RTCPeerConnection triggers a negotiation between the peers to agree on bandwidth limitations, format and resolution. \cite{Jennings} \cite{Garaizar}
 
-WebRTC STUN ICE...
+WebRTC contains an implementation for Interactive Connectivity Establishment (ICE), that allows connections to be formed from within local network segments that have Network Address Translation (NAT) enabled \cite{Jennings} \cite{Johnston}. ICE provides a method to create a connection between two peers that are separated by a firewall \cite{Rosenberg}. This means that WebRTC based technology can be used from within most managed private networks. However the encryption used for the WebRTC streams prevents the firewall from identifying and authenticating the connection. Solutions for authenticating and controlling the data streams exist, but a common standard is missing. This makes it possible to use WebRTC streaming in provate networks, but makes it hard to control the transmitted data. \cite{Johnston} This might be an obstacle for the wider implementation of WebRTC based services in private networks, but for now it does not prevent people from using the technology from within those networks.
 
-The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. Conferences or media streaming in a one to many --topology can be achieved by using a media processing node that handle the mixing of media between RTCPeerConnections. \cite{Jennings} In this prototype setting the media mixing server was not required for the proof of concept phase, but remains available for implementation if the systems is ever developed further.
+The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. Conferences or media streaming in a one to many --topology can be achieved by using a media processing node that handle the mixing of media between RTCPeerConnections. \cite{Jennings} Using a dedicated media processing node is one solution to controlling and authenticating data as it passes through a firewall \cite{Johnston}. In this prototype setting the media mixing server was not required for the proof of concept phase, but remains available for implementation if the systems is ever developed further. 
 
 \subsubsection{WebRTC Data transfer}
 
@@ -561,19 +561,16 @@ The system includes bandwidth management and supports common codecs, which makes
 
 \bibitem{Jennings} Jennings,\ C., Hardie,\ T., Westerlund, M. (2013) \textit{Real-time communications for the web} Communications Magazine, IEEE Vol. 51, Iss. 4, pp. 20-26. %%ISSN: 0163-6804
 
-\bibitem{Adeyeye} Adeyeye,\ M., Makitla,\ I., Fogwill,\ T. (2013) \textit{Determining the signalling overhead of two common WebRTC methods: JSON via XMLHttpRequest and SIP over WebSocket} IEEE 2013
-
 \bibitem{Garaizar} Garaizar,\ P., Vadillo,\ M.\ A., Lopez-de-Ipina,\ D. (2012) \textit{Benefits and pitfalls of using HTML5 APIs for online experiments and simulations} Remote Engineering and Virtual Instrumentation (REV), 2012 9th International Conference on pp. 1-7. %%ISBN: 978-1-4673-2540-0
 
-\bibitem{Hunger} Hunger,\ A., Hirlehei,\ A. (2013) \textit{Supporting globally distributed work - Cultural adaptivity meets groupware tailorability} Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics) 8024 LNCS: (PART 2) p. 219-227 2013. %%ISBN: 9783642391361
+\bibitem{Rosenberg} Rosenberg, J. (2010). Interactive connectivity establishment (ICE): A protocol for network address translator (NAT) traversal for offer/answer protocols. RFC 5245, April.
 
-\bibitem{Mootee} Mootee,\ I. (2013) \textit{Design thinking for strategic innovation : what they can't teach you at business or design school} Hoboken: Wiley , 2013. (e-book) %%ISBN: 9781118748855
+%%%% 
 
-\bibitem{} \textit{}
 
-\bibitem{} \textit{}
+\bibitem{Adeyeye} Adeyeye,\ M., Makitla,\ I., Fogwill,\ T. (2013) \textit{Determining the signalling overhead of two common WebRTC methods: JSON via XMLHttpRequest and SIP over WebSocket} IEEE 2013
 
-\bibitem{} \textit{}
+%%\bibitem{Hunger} Hunger,\ A., Hirlehei,\ A. (2013) \textit{Supporting globally distributed work - Cultural adaptivity meets groupware tailorability} Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics) 8024 LNCS: (PART 2) p. 219-227 2013. %%ISBN: 9783642391361
 
 \end{thebibliography}
 
