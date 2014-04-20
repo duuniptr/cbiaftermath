@@ -49,7 +49,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[OT1]{fontenc}
-\usepackage[british,finnish]{babel}
+\usepackage[finnish,british]{babel}
 
 %%\begin{otherlanguage}{finnish}
 %%\end{otherlanguage}
@@ -193,12 +193,13 @@ linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
 %% However, the LaTeX internal variable remains \instructor
 %% as there is little point to change the variable name. 
 %%
+\begin{otherlanguage}{finnish}
 \instructor{Official titles needed from everyone.}{Tarvitaan kaikkien tittelit vielä.}%
 %\instructor{Maria Clavert}{Maria Clavert}%
 %\instructor{Joona Kurikka}{Joona Kurikka}%
 %\instructor{Elina Kahkonen}{Elina Kahkonen}%
 %\instructor{Tuomas Paloposki}{Tuomas Paloposki}%
-
+\end{otherlanguage}
 %% Aaltologo: syntaksi:
 %% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
 %% Logon kieli on sama kuin dokumentin kieli
@@ -233,6 +234,7 @@ linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
 %% 
 %% Finnish abstract
 %%
+\begin{otherlanguage}{finnish}
 %% Tiivistelmän avainsanat
 \keywords{webrtc, videoneuvottelu,\\ poikkitieteellinen, tuotekehitys}
 %% Tiivistelmän tekstiosa
@@ -242,7 +244,7 @@ linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
   
   
 \end{abstractpage}
-
+\end{otherlanguage}
 %% Pakotetaan uusi sivu varmuuden vuoksi, jotta 
 %% mahdollinen suomenkielinen ja englanninkielinen tiivistelmä
 %% eivät tule vahingossakaan samalle sivulle
