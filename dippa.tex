@@ -541,10 +541,10 @@ Basic features of WebRTC already have decent support on popular platforms. The s
           ______            |
         / Server \          |   (Peers may now exchange 
         \________/          |    media streams directly)
-        /       \           |
- +------+       +------+    |    +------+     +------+
- | Peer |       | Peer |    |    | Peer |-----| Peer |
- +------+       +------+    |    +------+     +------+
+        /        \          |
+ +------+        +------+   |    +------+     +------+
+ | Peer |        | Peer |   |    | Peer |=====| Peer |
+ +------+        +------+   |    +------+     +------+
                             |
 \end{verbatim}
 \caption{Establishing RTCPeerConnection}
