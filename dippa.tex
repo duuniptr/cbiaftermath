@@ -448,7 +448,7 @@ Research by Clavert and Laakso \cite{Clavert} shows, that as engineering problem
                                     |  Test        |-> Iterate...
                                     +--------------+
 \end{verbatim}
-\caption{Design Thinking Process}
+\caption{Design Thinking Process used by IDEO & Stanford}
 \label{fig:dt-process}
 \end{figure}
 
@@ -474,7 +474,7 @@ As a practical activity to help the team understand their target group better, s
 
 Activities specifically related to TALENT were undertaken after the decision to use TALENT as the target group had solidified. Members of the project team observed a handful of TALENT coordination meetings and engaged in creative methods with members of TALENT. Observing the target users reveals important details of their daily activities and give access to information that does not rely on the users memory or interpretations \cite{Patnaik}. Regular meetings were also arranged when team members were present at CERN. The more general information on education that was gathered in the beginning of the course, formed a basis for the more specific solutions. This grounded the solutions on general problems in education, which would make them applicable in more than one environment. The next task would be to 
 
-Shadowing TALENT members and the discussions with the researchers helped the team find needs that TALENT has. As TALENT researchers develop technologies and components for the Insertable B--Layer for the ATLAS detector, they have to manage a massive amount of information and can afford virtually no mistakes in communication, as all the components must fit together precisely. The large elements are designed by globally distributed teams, each working on different parts of what is essentially a single device. Since the detector layer is built in parts but is practically not a modular device, the requirements for each component in the system are very rigid. Great care must be taken, not only in the design of the components, but in the assembly of the final product as well. Errors in the assembly sequence can lead to delays of several weeks or months, as parts may have to be redone. The distributed nature of the TALENT project also means that the IT infrastructure is fragmented into what ever each university, company or organization uses. Due to the difference in IT infrastructures, special care must be put into making the prototype compatible with the various platforms. 
+Shadowing TALENT members and the discussions with the researchers helped the team find needs that TALENT has. As TALENT researchers develop technologies and components for the insertable B--Layer for the ATLAS detector, they have to manage a massive amount of information and can afford virtually no mistakes in communication, as all the components must fit together precisely. The large elements are designed by globally distributed teams, each working on different parts of what is essentially a single device. Since the detector layer is built in parts but is practically not a modular device, the requirements for each component in the system are very rigid. Great care must be taken, not only in the design of the components, but in the assembly of the final product as well. Errors in the assembly sequence can lead to delays of several weeks or months, as parts may have to be redone. The distributed nature of the TALENT project also means that the IT infrastructure is fragmented into what ever each university, company or organization uses. Due to the difference in IT infrastructures, special care must be put into making the prototype compatible with the various platforms. 
 
 %%% Tarkempaa kohderyhmää,  lkm, ammatit, maat
 
@@ -540,8 +540,8 @@ Basic features of WebRTC already have decent support on popular platforms. The s
     peer connection             established
     
           ______            |
-        / Server \          |
-        \________/          |
+        / Server \          |   (Peers may now exchange 
+        \________/          |    media streams directly)
         /       \           |
  +------+       +------+    |    +------+     +------+
  | Peer |       | Peer |    |    | Peer |-----| Peer |
@@ -562,9 +562,7 @@ The peer-to-peer nature of WebRTC means that a separate connection is created fo
 
 Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings} \cite{Johnston} \cite{Frederick} RTP is also interesting because it supports multicasting \cite{Frederick}. The RTP stream could be realyed and broadcast to a larger audience by using a media processing node. Using the node would only add a single user to the conference, it would allow a larger audience to consume the stream without requiring massive mounts of bandwidth.
 
-WebRTC can also handle pure Session Initiation Protocol (SIP) based data transfer over WebSocket, and as JavaScript Object Notation (JSON) over XMLHttpRequest (XHR). Of those two options, JSON over XHR uses less bandwidth. \cite{Adeyeye}
-
-
+WebRTC can also handle pure Session Initiation Protocol (SIP) based data transfer over WebSocket, and as JavaScript Object Notation (JSON) over XMLHttpRequest (XHR). Of those two options, JSON over XHR uses less bandwidth. \cite{Adeyeye} Compatibility with JSON based messaging makes it easy to extend the capabilities of the application. Standardised messaging makes adding plug--ins and new functionalities much easier on the developer.
 
 
 \clearpage
@@ -614,7 +612,7 @@ Knowing the needs of the end user and having input form the various fields of sc
 %%%% 
 
 
-\bibitem{Adeyeye} Adeyeye,\ M., Makitla,\ I., Fogwill,\ T. (2013) \textit{Determining the signalling overhead of two common WebRTC methods: JSON via XMLHttpRequest and SIP over WebSocket} IEEE 2013
+%%\bibitem{Adeyeye} Adeyeye,\ M., Makitla,\ I., Fogwill,\ T. (2013) \textit{Determining the signalling overhead of two common WebRTC methods: JSON via XMLHttpRequest and SIP over WebSocket} IEEE 2013
 
 %%\bibitem{Hunger} Hunger,\ A., Hirlehei,\ A. (2013) \textit{Supporting globally distributed work - Cultural adaptivity meets groupware tailorability} Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics) 8024 LNCS: (PART 2) p. 219-227 2013. %%ISBN: 9783642391361
 
