@@ -48,7 +48,7 @@
 %%\usepackage[utf8]{inputenc}
 
 \usepackage[utf8]{inputenc}
-%%\usepackage[OT1]{fontenc}
+\usepackage[OT1]{fontenc}
 \usepackage[finnish,british]{babel}
 
 %%\begin{otherlanguage}{finnish}
@@ -195,7 +195,7 @@ linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
 %%
 %%\begin{otherlanguage}{finnish}
 \instructor{M.\ Clavert, T.\ Paloposki}{M.\ Clavert, T.\ Paloposki}
-\instructor{J.\ Kurikka, E.\ Kahkonen}{J.\ Kurikka, E.\ Kähkönen}
+\instructor{J.\ Kurikka, E.\ Kähkönen}{J.\ Kurikka, E.\ Kähkönen}
 %%\end{otherlanguage}
 %% Aaltologo: syntaksi:
 %% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
@@ -528,7 +528,7 @@ WebRTC stands for Web Real Time Communication and it is a set of open standards 
 
 Basic features of WebRTC already have decent support on popular platforms. The standard will define mandatory codecs to guarantee compatibility for audio and video compression, but developers are also free to add support for more codecs. At the time of writing this thesis, the supported codecs were OPUS and G.711 for audio, and VP8 and H.264 for video. \cite{Jennings} For now the user is notified and has to allow access to audio and video streams before they can be used, the same restriction does not apply to generic data connections \cite{Johnston}. Using WebRTC to develop an online service releases the developer from the need to work directly with encoding media and other low level work. Instead developers will be free to concentrate on the functionality and features that add value to their service, while the lower level functions are controlled through the API when needed.
 
-\subsubsection{WebRTC Architecture}
+\subsection{WebRTC Architecture}
 
 \begin{figure}
 \begin{verbatim}
@@ -555,7 +555,7 @@ WebRTC contains an implementation for Interactive Connectivity Establishment (IC
 
 The peer-to-peer nature of WebRTC means that a separate connection is created for each peer using the same application, this limits the maximum amount of peers to what a client connection can support. Conferences or media streaming in a one to many --topology can be achieved by using a media processing node that handle the mixing of media between RTCPeerConnections. \cite{Jennings} Using a dedicated media processing node is one solution to controlling and authenticating data as it passes through a firewall \cite{Johnston}. In this prototype setting the media mixing server was not required for the proof of concept phase, but remains available for implementation if the systems is ever developed further. 
 
-\subsubsection{WebRTC Data transfer}
+\subsection{WebRTC Data transfer}
 
 Media streams in WebRTC use the Real-Time Transport Protocol (RTP), to transfer time sensitive media streams. RTP can transport data encoded by various codecs and it can be used with any lower level transport protocol, like User Datagram Protocol (UDP) or Transfer Control Protocol (TCP). Using RTP for media transfer adds capabilities like, periodic transport feedback, event-driven transport and media feedback, and stream meta information. The subsystem provides a mechanism for the peers to negotiate codecs that both peers media subsystems support. \cite{Jennings} \cite{Johnston} \cite{Frederick} RTP is also interesting because it supports multicasting \cite{Frederick}. The RTP stream could be realyed and broadcast to a larger audience by using a media processing node. Using the node would only add a single user to the conference, it would allow a larger audience to consume the stream without requiring massive mounts of bandwidth.
 
