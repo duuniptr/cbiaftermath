@@ -300,26 +300,25 @@ This bachelors thesis is based on a pilot of a multidisciplinary project course,
 
 %% Aakkostetaan !
 \begin{tabular}{ll}
-CERN        & European Organization for Nuclear Research \\
+API         & Application Programming Interface \\
 CBI         & Challenge Based Innovation course at CERN,\\
             & in collaboration with various universities \\
-TCP         & Transfer Control Protocol \\ %%
-UDP         & User Datagram Protocol \\
+CERN        & European Organization for Nuclear Research \\
 HTML5       & Hyper Text Markup Language version 5 \\
-WebRTC      & Web Real Time Communication \\
-IETF        & The Internet Engineering Task Force \\
-W3C         & World Wide Web Consortium \\
-API         & Application Programming Interface \\
-RTP         & Real-Time Transport Protocol \\
-IT          & Information Technology \\
-UI          & User Interface \\
-NLP         & Natural Language Processing \\
 IBL         & Insertable B-Layer for the ATLAS experiment \\
-DBL         & Design Based Learning \\
 ICE         & Interactive Connectivity Establishment \\
-NAT         & Network Address Translation \\
-SIP         & Session Initiation Protocol \\
+IETF        & The Internet Engineering Task Force \\
+IT          & Information Technology \\
 JSON        & JavaScript Object Notation \\
+NAT         & Network Address Translation \\
+NLP         & Natural Language Processing \\
+RTP         & Real-Time Transport Protocol \\
+TCP         & Transfer Control Protocol \\ %%
+SIP         & Session Initiation Protocol \\
+UDP         & User Datagram Protocol \\
+UI          & User Interface \\
+WebRTC      & Web Real Time Communication \\
+W3C         & World Wide Web Consortium \\
 XHR         & XMLHttpRequest -- A browser based method for requesting data
 \end{tabular}
 
@@ -355,8 +354,8 @@ XHR         & XMLHttpRequest -- A browser based method for requesting data
 \thispagestyle{empty}
 
 This work is based on a project done at the European Organization for Nuclear Research (CERN), the organization that runs the worlds largest particel physics laboratory. CERN is the original home of many advanced and well known technologies, such as positron emission tomography (PET) and the World Wide Web. Of the largest four experiments (CMS, ATLAS, ALICE and LHCb) along the 27km particle accelerator ring, this project is related to ATLAS.
-The TALENT project, that is a part of the Marie Curie Initial Training Network, is developing new technologies for the ATLAS experiment. The main effort of TALENT is to develop the Insertable B--Layer of sensors during the upgrade of the Large Hadron Collider (LHC). The student team worked with TALENT and their technologies during the pilot course, to create innovations in the field of education.
-In this thesis I explain the background necessary to understand the concext of the student project. The design process and relevant scientific background information to frame the overall project will be introduced. The final concept produced by the team will be shortly explained and the final proof of concept prototype will be introduced. Technological and scientific data is used to explain the prototype and to provide an opportunity to reflect on the technology used in the prototype. In conclusion, merits of the overall process and the selected technology will be discussed.
+The TALENT project, is developing new technologies for the equipment used in the ATLAS experiment. The main effort of TALENT is to develop the Insertable B--Layer of sensors during the upgrade of the Large Hadron Collider (LHC). A team of masters level university students worked with TALENT and their technologies during the pilot course, to create innovations in the field of education.
+In this thesis the background necessary to understand the concext of the student project is presented. The design process and relevant scientific background information to frame the overall project will be introduced. Mainly this thesis will look at a version of design thinking used as a process and the technical specifications of the used framwork in the project context. A larger concept produced by the team will be shortly explained and the final proof of concept prototype will be introduced in more detail. Technological and scientific data is used to explain the prototype and to provide an opportunity to reflect on the technology used in the prototype. In conclusion, merits of the process and the selected technology will be discussed in the context of the project as a part of a university course.
 
 %% Opinnäytteessä jokainen osa alkaa uudelta sivulta, joten \clearpage
 %%
@@ -376,8 +375,7 @@ This chapter briefly explains the nature of the Challenge Based Innovation -cour
 
 \subsection{The Challenge Based Innovation course}
 
-%%% Kurssi, tuotekehitys, Prosessi, 
-The Challenge Based Innovation (CBI) course is organized in collaboration with CERN, Aalto University in Finland, University of Modena and Reggio Emilia (UNIMORE) in Italy and National Technical University of Athens (NTU) in Greece. CBI is a project based course in product development, that utilizes a design thinking process to guide multidisciplinary teams in prototyping. CBI is based in CERN, more specifically under a platform called IDEA\textsuperscript{S}. IDEA\textsuperscript{S} is an experimental platform that aims to support developing emerging technologies from CERN. The course pilot started end of October 2013 at CERN with a two week intensive training period and team forming. During the course altogether four intensive periods were held, with options to travel to CERN and increased communication within the teams. The last two week visit to CERN ended in the CBI presentations on 7.3.2014 and mostly involved building the final prototypes. This pilot had many of the attributes and activities of other project courses in Aalto, but was considerably shorter in real time.
+The Challenge Based Innovation (CBI) course is organized in collaboration with CERN, Aalto University in Finland, University of Modena and Reggio Emilia (UNIMORE) in Italy and National Technical University of Athens (NTU) in Greece. CBI is a project based course in product development, that utilizes a design thinking process to guide multidisciplinary teams in prototyping. CBI is based in CERN, more specifically under a platform called IDEA\textsuperscript{S}. IDEA\textsuperscript{S} is an experimental platform that aims to support developing emerging technologies from CERN. The course pilot started end of October 2013 at CERN with a two week intensive training period and team forming. During the course altogether four intensive periods were held, with options to travel to CERN and increased communication within the teams. The last two week visit to CERN ended in the public CBI presentations and otherwise mostly involved building of the final prototypes. This pilot had many common attributes and activities with other project courses in Aalto (\url{http://pdp.fi}, \url{http://me310.aalto.fi/}), but was organized in roughly half of the time.
 
 \subsection{The project team}
 
@@ -386,17 +384,14 @@ The project team was selected from the applicants and formed by the course staff
 
 \subsection{The TALENT project}
 
-The TALENT project at CERN, has young researchers in the field of instrumentation for radiation detection, developing new state--of--the--art technologies for the ATLAS detector. The project involves people from various countries and universities, working with industry in the various fields of advanced radiation sensors, fast and efficient data acquisition electronics, new cooling technologies and ultra light support structures.
-
-%% multidisciplinary industry ??
-%%% Yleiskuva, Teoriaa, Numeroita. TALENT
+The TALENT project at CERN, has young researchers in the field of instrumentation for radiation detection, developing new state--of--the--art technologies for the ATLAS detector. The project involves people from various countries and universities, working with industry in the various fields of advanced radiation sensors, fast and efficient data acquisition electronics, new cooling technologies and ultra light support structures. Because of the unique nature of the technology, much experimentation and planning is required to produce working devices. Many times new techologies or manufacturing methods need to be created to produce the qualitiy of products that are required.
 
 
 \subsection{The project brief for the CBI team}
 
-A project brief was written before the beginning of the course, in order to set a direction for the student project and help the involved parties agree and understand what will be done during the course. This is a well established method used when commissioning a project. The brief defines the scope of the project and it can be made specific or open, in this case the initial brief was left very open.
+A project brief was agreed upon before the beginning of the course, by members of TALENT and representatives of the course, in order to set a direction for the student project. This helps the involved parties agree and understand what will be done during the course. This is a well established method used when commissioning a project. The brief defines the scope of the project and it can be made specific or open, in this case the initial brief was left very open.
 
-The two main requirements for the project were a connection to TALENT and a relation to education. The brief was left  open, so that the multidisciplinary team could customize it to suit their specific set of skills. On a more detailed level, three different tracks were presented for the team to choose.
+The two main requirements for the project were a connection to TALENT and a relation to education. The brief was left  open so that the multidisciplinary team could customize it to suit their specific set of skills. The requirements set  two frames for the project to be in, a connection to TALENT and a benefit to education. On a more detailed level, three different tracks were presented for the team to choose.
 
 \begin{itemize}
 \item[--]Using TALENT technologies for education.
@@ -413,7 +408,7 @@ The final problem definition and type of solution was left for the student team 
 
 \section{A design thinking approach}
 
-Research by Clavert and Laakso \cite{Clavert} shows, that as engineering problems are getting more complex, a more design oriented view of the problem field than traditionally held is useful for the modern engineering student. By having students solve problems in a project oriented fashion, they have a more useful and natural setting in which to expand their knowledge of both science and design. An interdisciplinary set of skills will help better prepare the students to work with people from other fields and by giving contrast -- deepen their understanding of their own professional skills. Design Based Learning (DBL) puts the students at the center of action and enables them to immerse themselves into the subject at hand. This approach affects the role of the teacher as well as the student, by giving the students more autonomy regarding their methods and making the lecturer more into a facilitator and guide for the student group. However, to provide a common base for the project process, a design thinking frame (See Figgure 1) is usually provided for the project teams. The process presented below is a general representation of the steps usually included in the design thinking process \cite{Brown}. 
+Work done by Clavert and Laakso \cite{Clavert} shows, that as engineering problems are getting more complex, a more design oriented view of the problem field than traditionally held is useful for the modern engineering student. By having students solve problems in a project oriented fashion, they have a more useful and natural setting in which to expand their knowledge of both science and design. An interdisciplinary set of skills will help better prepare the students to work with people from other fields and by giving contrast -- deepen their understanding of their own professional skills. A more design based approach to learning puts the students at the center of action and enables them to immerse themselves into the subject at hand. This approach affects the role of the teacher as well as the student, by giving the students more autonomy regarding their methods and making the lecturer more into a facilitator and guide for the student group. However, to provide a common base for the project process, a design thinking frame (see Figure 1) is usually provided for the project teams. The process presented below is a general representation of the steps usually included in the design thinking process \cite{Brown}. 
 
 %% Lisää lähteitä Hassi & Laakso
 
@@ -440,7 +435,7 @@ Research by Clavert and Laakso \cite{Clavert} shows, that as engineering problem
 \label{fig:dt-process}
 \end{figure}
 
-The design thinking process referred to by Clavert \& Laakso \cite{Clavert} and by Brown \cite{Brown} is an iterative process that usually has the following steps in some form. It begins with empathy, more specifically understanding the needs of the user. This enables the group to form an understanding of the goals of the user and helps them in refining the problem. Next comes the problem definition, where the knowledge of the users needs is combined with the goals of the project to produce a more clear definition for the project task. This enables the group to go forward in the process to the ideation phase. During this phase a diverse set of ideas that address the problem definition are created. One or more of the ideas produced are then taken to the next level, by refining them and building a practical prototype of the solution. The prototype can be a physical product or an immaterial production that can be used in order to learn new information that would help solve the problem. Testing the prototype is the final phase and it usually includes engaging the end users and learning from their interactions with the prototype. \cite{Clavert} \cite{Brown} The process can be repeated to produce a cycle of divergent and convergent thinking that should ultimately bring the group closer to an implementable solution to their redefined problem.
+The design thinking process referred to by Clavert \& Laakso \cite{Clavert} and by Brown \cite{Brown} is an iterative process that usually has the following steps in some form. It begins with empathy, more specifically understanding the needs of the user. This enables the group to form an understanding of the goals of the user and helps them in refining the problem. Next comes the problem definition, where the knowledge of the users needs is combined with the goals of the project to produce a clearer definition for the project task. This enables the group to go forward in the process to the ideation phase. During this phase a diverse set of ideas that address the problem definition are created. One or more of the ideas produced are then taken to the next level, by refining them and building a practical prototype of the solution. The prototype can be a physical product or an immaterial production that can be used in order to learn new information that would help solve the problem. Testing the prototype is the final phase and it usually includes engaging the end users and learning from their interactions with the prototype. \cite{Clavert} \cite{Brown} The process can be repeated to produce a cycle of divergent and convergent thinking that should ultimately bring the group closer to an implementable solution to their redefined problem.
 
 \subsection{Scope of the project -- Defining the questions}
 
