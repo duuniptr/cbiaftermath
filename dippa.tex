@@ -481,11 +481,11 @@ As a final prototype that demonstrates a core function from the overall concept,
 
 An online meeting room was created where users could open a page and enter a conference room designated by the link that they followed. As the system was built for demonstration purposes, there was no login system and each user's meta data was automatically generated. The application would ask for permission to use the microphone resource of each user as they entered. When allowed, the system would start monitoring the users audio and automatically connect the local stream to each remote user. Users should be able to have a conversation within the system and gain live or close to live access to the generated meta data.
 
-The application that was built according to the above specification, monitors the users microphone for changes in volume levels in order to determine whether the user is speaking or if the the volume is at background noise levels. A rising signal triggers the application to record audio, until a set amount of silence is detected after the event. This system enables the recording of speech while ignoring longer periods of silence. The live audio is transmitted to all the peers in the virtual conference room regardless of recording status. This allows for the conversation to flow naturally. 
+The application that was built according to the above specification, monitors the users microphone for changes in volume levels in order to determine whether the user is speaking or if the the volume is at background noise levels. A rising signal triggers the application to record audio, until a set amount of silence is detected after the event. This system enables the recording of speech while ignoring longer periods of silence. The live audio is transmitted to all the peers in the virtual conference room regardless of recording status. This allows for the conversation to flow naturally. See figure \ref{fig:meeting_ui} for UI scetch.
 
 \begin{figure}[H]
 
-\centering \includegraphics[width=0.9\textwidth]{meeting_ui}
+\centering \includegraphics[width=16cm]{meeting_ui}
 \caption{Prototype UI by Alexanteri Heliövaara}
 \label{fig:meeting_ui}
 
