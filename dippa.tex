@@ -86,6 +86,8 @@ linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
 %% defines url environment and formats it correctly
 \usepackage{url}
 
+%%\usepackage[section]{placeins}
+\usepackage{float}
 %% Matematiikan fontteja, symboleja ja muotoiluja lisää, näitä tarvitaan usein 
 %%
 %% Use this if you write hard core mathematics, these are usually needed
@@ -412,7 +414,7 @@ Work done by Clavert and Laakso \cite{Clavert} shows, that as engineering proble
 
 %% Lisää lähteitä Hassi & Laakso
 
-\begin{figure}
+\begin{figure}[H]
 \begin{verbatim}
  
  +--------------+
@@ -516,7 +518,7 @@ Basic features of WebRTC already have decent support on popular platforms. The s
 
 \subsection{WebRTC Architecture}
 
-\begin{figure}
+\begin{figure}[H]
 \begin{verbatim}
 
     Initiating                  RTCPeerConnection
